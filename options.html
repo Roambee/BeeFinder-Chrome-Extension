@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>BeeFinder Options</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <!-- Bootstrap icons-->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" /> -->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/options.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <h1 class="navbar-brand display-1" style="color:#FDB834">
+                    <!-- with logo at minute 11: https://www.youtube.com/watch?v=akXfF066MY0&ab_channel=ADesignerWhoCodes -->
+                    <strong>bee<span style="color:white">finder</span></strong>
+                </h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="options.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#settings" id="nav-settings" style="display:none;">Settings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5" id="header" >
+            <div class="container px-5" id="dashboard-div">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Health Check Dashboard</h1>
+                            <p class="lead text-white-50 mb-4">Quickly check the health, firmware and configs of your Bees</p>
+                            <div class="row d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                <a class="col-lg-6 col-sm-8 btn btn-success btn-lg px-4 me-sm-3" id="activate-btn" style="display:none">Activate</a>
+                                <a class="col-lg-6 col-sm-8 btn btn-outline-light btn-lg px-4 me-sm-3" id="template-btn" href="#template" >Create config Template</a>
+                                <a class="col-lg-6 col-sm-8 btn btn-outline-light btn-lg px-4 me-sm-3" id="see-templates-btn" href="#your-templates" >See Your Templates</a>
+                                <a class="col-lg-6 col-sm-8 btn btn-outline-light btn-lg px-4 me-sm-3" id="firmware-btn" href="#firmware" >Manage Firmwares</a>
+                                <!-- <a class="col-lg-6 col-sm-8 btn btn-outline-light btn-lg px-4 me-sm-3" id="about-btn" href="#about" style="display:none">Learn More</a> -->
+                                <a class="col-lg-6 col-sm-8 btn btn-outline-danger btn-lg px-4 me-sm-3" id="disable-btn" >Disable</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Seettings-->
+        <!-- <section class="bg-light py-5 border-bottom" id="settings">
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Settings</h2>
+                    <p class="lead mb-0">Manage your Dashboard</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body p-5">
+                                <div class="dc-grid"><a class="btn btn-outline-primary" href="#!">See Templates</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body p-5">
+                                <div class="d-grid"><a class="btn btn-primary" href="#template">Create Template</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <div class="d-grid"><a class="btn btn-outline-primary" href="#firmware">Manage Firmwares</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- About section-->
+        <section class="bg-light py-5 border-bottom" id="about" name="about">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <h2 class="h4 fw-bolder">Healthy Bees</h2>
+                        <p>The Bees that communicate are called <span class="fst-italic">Healthy Bees</span>. All <span class="fst-italic">Healthy Bees</span> will be in green color and when a Bee is not communicating, it is displayed in red.</p>
+                    </div>
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                        <h2 class="h4 fw-bolder">On latest Firmware</h2>
+                        <p>If a Bee is <span class="fst-italic">Healthy</span> and on the latest Firmware, it will be in green color. If a Bee is not on the latest Firmware the <span class="fst-italic">Firmware Rev</span> cell will be in orange color. You can manange the latest Firmwares <a href="#firmware">here</a></p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h4 fw-bolder">Ready to ship</h2>
+                        <p>A Bee is ready to ship if it is <span class="fst-italic">Healthy</span>, assigned to Roambee account and has more than 70% battery charge. If not, the cells will be in orange.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h4 fw-bolder">Config Templates</h2>
+                        <p>Quickly check if your Bees match your own configuration templates. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Template section-->
+        <section class="py-5 border-bottom" id="template" name="template">
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Config Templates</h2>
+                    <p class="lead mb-0">Create Your own template</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <!-- Pricing card free-->
+                    <div class="col-xl-12">
+                        <div class="card mb-5 mb-xl-0 bg-light">
+                            <div class="card-body p-5">
+                                <form id="template-form">
+                                    <div class="mb-3">
+                                      <label for="template-name" class="form-label">Temaplate name:</label>
+                                      <input type="text" class="form-control" id="template-name" required maxlength="25"><!-- aria-describedby="templateNameHelp"-->
+                                      <!-- <div id="templateNameHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                                    </div>
+                                  <div class="row gx-5 justify-content-center">
+                                    <div class="col-md-6 col-sm-12 col-lg-8">
+                                        <!-- <div class="form-check form-switch mb-2">
+                                          <input class="form-check-input" type="checkbox" id="health" checked>
+                                          <label class="form-check-label" for="health">Health check</label>
+                                        </div>
+                                        <div class="form-check form-switch mb-2">
+                                          <input class="form-check-input" type="checkbox" id="fw" checked>
+                                          <label class="form-check-label" for="fw">Latest Firmware check</label>
+                                        </div>
+                                        <div class="form-check form-switch mb-3">
+                                          <input class="form-check-input" type="checkbox" id="battery" checked>
+                                          <label class="form-check-label" for="battery">Battery more than 70%</label>
+                                        </div> -->
+                                        <label class="form-label">Ping Reporting Frequency (PRF):</label>
+                                        <div class="input-group mb-1">
+                                          <input type="number" min="3600" step="3600" class="form-control" id="prf" placeholder="e.g. 1 hour = 3600" aria-label="Ping Reporting Frequency" aria-describedby="basic-addon2" required>
+                                          <span class="input-group-text" id="basic-addon2">seconds</span>
+                                        </div>
+                                        <div class="form-check">
+                                          <input type="checkbox" class="form-check-input" id="prfCheck">
+                                          <label class="form-check-label" for="prfCheck">Ignore PRF</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-lg-4">
+                                      <div class="form-check mb-1 mt-3">
+                                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="mode-nm" checked>
+                                          <label class="form-check-label" for="mode-nm">
+                                            Normal Mode
+                                          </label>
+                                      </div>
+                                      <div class="form-check mb-1">
+                                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="mode-om">
+                                          <label class="form-check-label" for="mode-om">
+                                            Ocean Mode
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="modeCheck">
+                                        <label class="form-check-label" for="modeCheck">Ignore Mode</label>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <hr></hr>
+
+                                  <div class="row gx-5 justify-content-center">
+                                      <div class="col-lg-4 col-md-6">
+                                          <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" id="tmp" checked>
+                                            <label class="form-check-label" for="tmp">Temperature</label>
+                                          </div>
+                                          <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="tmpCheck">
+                                            <label class="form-check-label" for="tmpCheck">Ignore TMP</label>
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-4 col-md-6">
+                                          <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" id="prs" checked>
+                                            <label class="form-check-label" for="prs">Pressure</label>
+                                          </div>
+                                          <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="prsCheck">
+                                            <label class="form-check-label" for="prsCheck">Ignore PRS</label>
+                                          </div>
+
+                                      </div>
+                                      <div class="col-lg-4 col-md-6">
+                                          <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" id="hum" checked>
+                                            <label class="form-check-label" for="hum">Humidity</label>
+                                          </div>
+                                          <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="humCheck">
+                                            <label class="form-check-label" for="humCheck">Ignore HUM</label>
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-4 col-md-6">
+                                          <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" id="amb" disabled>
+                                            <label class="form-check-label" for="amb">Ambient</label>
+                                          </div>
+                                          <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="ambCheck" checked>
+                                            <label class="form-check-label" for="ambCheck">Ignore AMB</label>
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-4 col-md-6">
+                                          <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" id="shk" disabled>
+                                            <label class="form-check-label" for="shk">Shock</label>
+                                          </div>
+                                          <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="shkCheck" checked>
+                                            <label class="form-check-label" for="shkCheck">Ignore SHK</label>
+                                          </div>
+                                      </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-check form-switch mb-1">
+                                              <input class="form-check-input" type="checkbox" id="ble">
+                                              <label class="form-check-label" for="ble">Bluetooth</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                              <input type="checkbox" class="form-check-input" id="bleCheck">
+                                              <label class="form-check-label" for="bleCheck">Ignore BLE</label>
+                                            </div>
+                                        </div>
+                                  </div>
+
+
+                                  <a class="btn btn-primary" id="create-template" style="width:100%">Create Template</a>
+                                </form>
+
+                                <div class="toast bg-success" id="toastSuccess" style="position:absolute; top:15px; right:10px;">
+                                    <div class="d-flex">
+                                        <div class="toast-body" style="color:white">
+                                            Template created successfully
+                                        </div>
+                                        <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                                <div class="toast bg-danger" id="toastFailed" style="position:absolute; top:15px; right:10px;">
+                                    <div class="d-flex">
+                                        <div class="toast-body" style="color:white">
+                                            Template name already exists
+                                        </div>
+                                        <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                                <div class="toast bg-danger" id="toastFailed1" style="position:absolute; top:15px; right:10px;">
+                                    <div class="d-flex">
+                                        <div class="toast-body" style="color:white">
+                                            You have too many templates
+                                        </div>
+                                        <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Firmware section-->
+        <section class="bg-light py-5 border-bottom" id="your-templates" name="your-templates">
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Your Templates</h2>
+                    <p class="lead mb-0">See all config templates</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <!-- Pricing card free-->
+                    <div class="col-xl-10">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body p-5">
+                                <form id="template-form">
+                                    <div class="mb-3">
+                                        <label for="template-name" class="form-label">Temaplate name:</label>
+                                        <select class="form-select" id="see-template-select" aria-label="Select Template">
+                                            <option value="Default" selected>Default</option>
+                                            <option value="Pharma">Pharma</option>
+                                            <option value="Vaccine">Vaccine</option>
+                                        </select>
+                                    </div>
+
+                                    <table class="table table-striped">
+                                      <!-- <thead>
+                                        <tr>
+                                          <th scope="col">Name</th>
+                                          <th scope="col">Default</th>
+                                        </tr>
+                                      </thead> -->
+                                      <tbody>
+                                        <tr>
+                                          <th scope="row">PRF</th>
+                                          <td id="see-prf">3600</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Mode</th>
+                                          <td id="see-mode">NM</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Temperature</th>
+                                          <td id="see-tmp">On</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Pressure</th>
+                                          <td id="see-prs">On</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Humidity</th>
+                                          <td id="see-hum">On</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Ambient</th>
+                                          <td id="see-amb">Ignore</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Shock</th>
+                                          <td id="see-shk">Ignore</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Bluetooth</th>
+                                          <td id="see-ble">Off</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+
+                                    <a class="btn btn-outline-danger" id="delete-template" style="width:100%">Delete Template</a>
+                                </form>
+
+                                <div class="toast bg-success" id="toastSuccess1" style="position:absolute; top:15px; right:10px;">
+                                    <div class="d-flex">
+                                        <div class="toast-body" style="color:white">
+                                            Template deleted successfully
+                                        </div>
+                                        <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                                <div class="toast bg-danger" id="toastFailed3" style="position:absolute; top:15px; right:10px;">
+                                    <div class="d-flex">
+                                        <div class="toast-body" style="color:white">
+                                            You cannot delete the Default template
+                                        </div>
+                                        <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Firmware section-->
+        <section class="py-5 border-bottom" id="firmware" name="firmware">
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Firmwares</h2>
+                    <p class="lead mb-0">Manage the latest firmwares</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <!-- Pricing card free-->
+                    <div class="col-lg-8 col-md-12 col-sm-12">
+                        <div class="card mb-5 mb-xl-0 bg-light">
+                            <div class="card-body p-5">
+                                <form>
+                                    <label class="form-label">Firmware string:</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="fw-text" placeholder="e.g. RB3AUTF600" aria-label="Ping Reporting Frequency" required>
+                                        <a class="input-group-text btn btn-primary" id="add-fw">Add</a>
+                                    </div>
+                                    <div class="mb-3">
+                                      <!-- <label for="template-name" class="form-label" style="color:white">Select latest firmwares</label> -->
+                                      <div class="list-group" id="fw-group">
+
+                                        <!-- <label class="list-group-item">
+                                          <input class="form-check-input me-1" type="checkbox">
+                                          Fourth checkbox
+                                        </label>
+                                        <label class="list-group-item">
+                                          <input class="form-check-input me-1" type="checkbox">
+                                          Fifth checkbox
+                                        </label> -->
+                                      </div>
+                                    </div>
+                                    <a class="btn btn-outline-danger" style="width:100%" id="reset-fw">Reset list</a>
+                                </form>
+
+                                <div class="toast bg-danger" id="toastFailed2" style="position:absolute; top:15px; right:10px;">
+                                    <div class="d-flex">
+                                        <div class="toast-body" style="color:white">
+                                            Firmware string already in list
+                                        </div>
+                                        <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-6">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body p-5 bg-light">
+                                <form>
+                                    <div class="mb-3">
+                                      <input type="text" class="form-control" id="template-name" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mb-5" style="width:100%">Add Firmware</button>
+                                    <div class="mb-3">
+                                      <input type="text" class="form-control" id="template-name" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mb-3" style="width:100%">Remove Firmware</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Pricing card pro-->
+                    <!-- <div class="col-lg-6 col-xl-5">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body p-5">
+                                <div class="small text-uppercase fw-bold">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    Pro
+                                </div>
+                                <div class="mb-3">
+                                    <span class="display-4 fw-bold">$9</span>
+                                    <span class="text-muted">/ mo.</span>
+                                </div>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        <strong>5 users</strong>
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        5GB storage
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited public projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Community access
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited private projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Dedicated support
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Free linked domain
+                                    </li>
+                                    <li class="text-muted">
+                                        <i class="bi bi-x"></i>
+                                        Monthly status reports
+                                    </li>
+                                </ul>
+                                <div class="d-grid"><a class="btn btn-primary" href="#!">Choose plan</a></div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Pricing card enterprise-->
+                    <!-- <div class="col-lg-6 col-xl-4">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <div class="small text-uppercase fw-bold text-muted">Enterprise</div>
+                                <div class="mb-3">
+                                    <span class="display-4 fw-bold">$49</span>
+                                    <span class="text-muted">/ mo.</span>
+                                </div>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        <strong>Unlimited users</strong>
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        5GB storage
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited public projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Community access
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited private projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Dedicated support
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        <strong>Unlimited</strong>
+                                        linked domains
+                                    </li>
+                                    <li class="text-muted">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Monthly status reports
+                                    </li>
+                                </ul>
+                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <!-- Contact section-->
+        <section class="py-5" id="contact" name="contact">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                    <h2 class="fw-bolder">Get in touch</h2>
+                    <p class="lead mb-0">We'd love to hear from you</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Full name</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <label for="phone">Phone number</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- Footer-->
+        <!-- <footer class="py-5 bg-dark">
+            <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer> -->
+        <!-- Bootstrap core JS-->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/options.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+    </body>
+</html>

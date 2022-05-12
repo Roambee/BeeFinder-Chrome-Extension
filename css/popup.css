@@ -1,0 +1,94 @@
+/* remove bs outlines */
+.navbar-toggler:focus, .input:focus, .btn:focus{
+     outline: none !important;
+     box-shadow: none;
+}
+
+body{
+    width: 240px;
+    user-select: none;
+}
+
+h1 {
+    margin: 0px;
+    font-size: 1.5rem !important;
+}
+
+.navbar-toggler{
+    /* padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px; */
+    padding: 0px;
+    border: 0px !important;
+}
+.navbar-toggler-icon{
+    width: 25px !important;
+    height: 25px !important;
+    margin: 0px !important;
+}
+
+.tab {
+    display: none;
+    padding: 8px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.nav-link {
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.input{
+    resize: none;
+}
+
+.clear{
+    color: #0d6efd;
+    position: absolute;
+    top: 60px;
+    right: 14px;
+}
+.clear:hover{
+    color: #0b5ed7;
+}
+
+.largebutton{
+    width: 100%;
+}
+
+.pill{
+    margin: 0px;
+}
+
+#selectActions {
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+}
+option{
+    background-color: white;
+    color: black;
+}
+.temptext {
+    width: 0px;
+    height: 0px;
+    border: 0px;
+    padding: 1px;
+    position: fixed;
+}
+
+.historytext{
+    background-color: #fff !important;
+    cursor: pointer;
+}
+.historyactive{
+    background-color: #0d6efd !important;
+    color: white !important;
+    cursor: pointer;
+}
+#amountBeesDups{
+    z-index: 1;
+}

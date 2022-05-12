@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/popup.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="container bg-dark" id="navbar">
+            <nav class="navbar navbar-dark">
+                <h1 class="navbar-brand display-1" style="color:#FDB834">
+                    <!-- with logo at minute 11: https://www.youtube.com/watch?v=akXfF066MY0&ab_channel=ADesignerWhoCodes -->
+                    <strong>bee<span style="color:white">finder</span></strong>
+                </h1>
+                <button id="menubutton"
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#toggleMenu"
+                    aria-controls="toggleMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="toggleMenu">
+                    <ul class="navbar-nav text-center">
+                        <li>
+                            <a class="nav-link active" id="home-btn" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" id="more-btn" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">More</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" id="history-btn" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">History</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container bg-dark tab" id="home" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+            <div class="bg-light rounded-1 p-1">
+                <textarea id="input" rows="3" class="form-control form-control-sm input display-1" placeholder="Paste your text here..."></textarea>
+                <button type="button" class="btn btn-primary btn-sm mt-1 display-1 largebutton" id="go_button"
+                    title="Find all device IDs and copy to clipboard">
+                    Find Bees <span class="badge bg-success" id="amountBees"></span>
+                     <span class="badge bg-danger" id="amountBeesDups"></span>
+                </button>
+                <textarea id="output" rows="3" class="form-control form-control-sm input display-1 mt-1" readonly placeholder="No Bees"></textarea>
+                <button type="button" class="btn btn-primary btn-sm mt-1 display-1 largebutton" id="copy1"
+                    title="Copy sequence to clipboard">
+                    Copy sequence <span class="badge bg-success" id="copied1"></span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm mt-1 display-1 largebutton" id="copy2"
+                    title="Copy list to clipboard">
+                    Copy list <span class="badge bg-success" id="copied2"></span>
+                </button>
+            </div>
+        </div>
+        <div class="container bg-dark tab" id="more" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+            <div class="bg-light rounded-1 p-1">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" id="clear" class="clear" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                </svg> -->
+                <textarea id="input1" rows="3" class="form-control form-control-sm input display-1" placeholder="Paste your text here..."></textarea>
+                <select id="selectActions" class="form-select form-select-sm mt-1" aria-label="Default select example">
+                    <option value="default">Select action</option>
+                    <option value="0">BeeSense IMEI (15 Dec)</option>
+                    <option value="1">BeeBeacon IMEI (6 Hex)</option>
+                    <option value="2">BeeLock IMEI (10 Dec)</option>
+                    <option value="3">BeeRouter IMEI (12 Hex)</option>
+                    <option value="4">Beacon Scan to ID</option>
+                    <option value="5">SIM number</option>
+                </select>
+                <button type="button" disabled class="btn btn-primary btn-sm mt-1 display-1 largebutton text-start" id="go_button2"
+                    title="Find all device IDs and copy to clipboard">
+                    Find <span class="badge bg-success" id="amountImei"></span>
+                     <span class="badge bg-danger" id="amountImeiDups"></span>
+                </button>
+                <textarea id="output2" rows="3" class="form-control form-control-sm input display-1 mt-1" readonly placeholder="No Bees"></textarea>
+                <button type="button" class="btn btn-primary btn-sm mt-1 display-1 largebutton" id="copy3"
+                    title="Copy sequence to clipboard">
+                    Copy sequence <span class="badge bg-success" id="copied3"></span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm mt-1 display-1 largebutton" id="copy4"
+                    title="Copy list to clipboard">
+                    Copy list <span class="badge bg-success" id="copied4"></span>
+                </button>
+                <!-- <button type="button" class="btn btn-primary btn-sm mt-1 display-1 largebutton" id="copyToPage1"
+                    title="Copy to Bees table">
+                    Copy to Bees table <span class="badge bg-success" id="copiedToPage1"></span>
+                </button> -->
+            </div>
+        </div>
+        <div class="container bg-dark tab" id="history" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+            <div class="bg-light rounded-1 p-1">
+                <div id="histroyDiv">
+                    <textarea id="history1" rows="3" class="historytext form-control form-control-sm input display-1 mb-1" readonly placeholder="No Bees"></textarea>
+                    <textarea id="history2" rows="3" class="historytext form-control form-control-sm input display-1 mb-1" readonly placeholder="No Bees"></textarea>
+                    <textarea id="history3" rows="3" class="historytext form-control form-control-sm input display-1 mb-1" readonly placeholder="No Bees"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm display-1 largebutton" id="copy5" disabled
+                    title="Copy sequence to clipboard">
+                    Copy sequence <span class="badge bg-success" id="copied5"></span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm mt-1 display-1 largebutton" id="copy6" disabled
+                    title="Copy list to clipboard">
+                    Copy list <span class="badge bg-success" id="copied6"></span>
+                </button>
+                <!-- <button type="button" class="btn btn-primary btn-sm mt-1 display-1 largebutton" id="copyToPage2"
+                    title="Copy to Bees table">
+                    Copy to Bees table <span class="badge bg-success" id="copiedToPage2"></span>
+                </button> -->
+            </div>
+        </div>
+        <textarea class="temptext" id="temptext"></textarea>
+        <textarea class="temptext" id="duptext"></textarea>
+        <textarea class="temptext" id="duptext1"></textarea>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/popup.js"></script>
+    </body>
+</html>
